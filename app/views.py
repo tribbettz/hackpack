@@ -14,6 +14,69 @@ from app.models import *
 
 import os, sys, datetime, copy, logging, settings
 
+class globvars():
+  pages = [
+      {'name':'Home', 'url':'../../'}, #Make a "the elements" section
+      {'name':'About', 'url':'../../about'}, #Make a Contact section here
+      {'name':'More Resources', 'url':'../../resources'},
+      {'name':'Setup Tutorial', 'url':'../../tutorial'},
+      {'name':'Sample Guestbook App', 'url':'../../guestbook'},
+    ]
+  proj_name = "2.75-gaedj"
+  founders = [
+    {'name':'Alex Rattray', 'email':'rattray@wharton.upenn.edu',
+       'blurb':'I\'m Alex. I like webdev and most things Seattle.'},
+    {'name':'Greg Terrono', 'email':'terronogr@seas.upenn.edu',
+       'blurb':'I\'m Greg. I like webdev and most things Boston. (??)'},
+    ]
+  context = {
+      'pages': pages,
+      'proj_name': proj_name,
+      'founders': founders
+      }
+  
+def index(request):
+  gv = globvars
+  context = {
+    'thispage':'Home'
+      }
+  context = dict(context, **gv.context) #combines the 'local' context with the 'global' context
+  return render_to_response('index.html', context)
+
+def about(request):
+  gv = globvars
+  context = {
+    'thispage':'About'
+      }
+  context = dict(context, **gv.context)
+  return render_to_response('about.html', context)
+
+def resources(request):
+  gv = globvars
+  context = {
+    'thispage':'More Resources'
+      }
+  context = dict(context, **gv.context)
+  return render_to_response('resources.html', context)
+
+def tutorial(request):
+  gv = globvars
+  context = {
+    'thispage':'Setup Tutorial'
+      }
+  context = dict(context, **gv.context)
+  return render_to_response('tutorial.html', context)
+
+def guestbook(request):
+  gv = globvars
+  context = {
+    'thispage': 'Sample Guestbook App'
+    }
+  context = dict(context, **gv.context)
+  return render_to_response('guestbook.html', context)
+
+#######below this lies shit from dc
+
 def image_handler(request, ID):
   project_name = str(project).replace('%20',' ')
   logging.warning(project_name)
@@ -30,13 +93,7 @@ def image_handler(request, ID):
       the_image = img.full if size=='full' else img.medium
     return HttpResponse(the_image, headers)
 
-def index(request):
-  projects = Project.objects.all().order_by('name')
-  context = {
-      'projects': projects,
-      'user': request.user,
-      }
-  return render_to_response('index.html', context)
+
 
 class SignUpForm(forms.Form):
   email = forms.EmailField(max_length=30)
