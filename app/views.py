@@ -14,6 +14,9 @@ from app.models import *
 
 import os, sys, datetime, copy, logging, settings
 
+
+# Change everything in this! Makes things pretty fast and easy
+# so the basic info about the site is ubiquitous. 
 class globvars():
   pages = [
       {'name':'Home', 'url':'../../'}, #Make a "the elements" section
@@ -22,17 +25,25 @@ class globvars():
       {'name':'Setup Tutorial', 'url':'../../tutorial'},
       {'name':'Sample Guestbook App', 'url':'../../guestbook'},
     ]
-  proj_name = "2.75-gaedj"
+  proj_name = "DecisionCandy HackPack"
   founders = [
-    {'name':'Alex Rattray', 'email':'rattray@wharton.upenn.edu',
-       'blurb':'I\'m Alex. I like webdev and most things Seattle.'},
-    {'name':'Greg Terrono', 'email':'terronogr@seas.upenn.edu',
-       'blurb':'I\'m Greg. I like webdev and most things Boston. (??)'},
+    {'name':'Alex Rattray',
+       'email':'rattray@wharton.upenn.edu',
+       'url':'http://alexrattray.com',
+       'blurb':'I\'m Alex. I like webdev and most things Seattle.',
+       'picture':'http://profile.ak.fbcdn.net/hprofile-ak-ash2/273392_515004220_1419119046_n.jpg'},
+    {'name':'Greg Terrono',
+       'email':'terronogr@seas.upenn.edu',
+       'url':'',
+       'blurb':'I\'m Greg. I like webdev and most things Boston. (??)',
+       'picture':'http://ia.media-imdb.com/images/M/MV5BMTk2MzU4ODA4NV5BMl5BanBnXkFtZTcwNzI3NDk0NA@@._V1._SX214_CR0,0,214,314_.jpg'},
     ]
+  proj_description = "A quick and dirty package of Django on Google App Engine running Python 2.7 with HTML5 Boilerplate and Twitter Bootstrap."
   context = {
       'pages': pages,
       'proj_name': proj_name,
-      'founders': founders
+      'founders': founders,
+      'proj_description': proj_description,
       }
   
 def index(request):

@@ -15,10 +15,9 @@
 {% block content %}
 <!-- Main hero unit for a primary marketing message or call to action -->
 <div class="hero-unit">
-	<h1>2.75-gaedj</h1>
-	<h2>A HackPack from DecisionCandy</h2>
+	<h1>{{ proj_name }}</h1>
+	<h2>{{ proj_description }}</h2>
 	<h2></h2>
-	<p>A quick and dirty package of Django on Google App Engine running Python 2.7 with HTML5 Boilerplate and Twitter Bootstrap.</p>
 	<p>Use it to hack something out quickly without worrying about the standard drudgery of:
 		<ul>
 			<li>Setting up server stuff (other than a GAE account--two flicks of a whistle'll get you there). </li>
@@ -35,19 +34,64 @@
 <!-- Example row of columns -->
 <div class="row" id="about">
 	<div class="span-one-third">
-		  <h2>Google App Engine</h2>
-		  <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-		  <p><a class="btn" href="#">View details &raquo;</a></p>
+		<h2>Google App Engine</h2>
+		<h3>the muscle</h3>
+		<p>GAE is a great choice for a quick hack. 
+			Powered by Google's infrastructure, 
+			it takes care of all hosting aspects, 
+			including the database: a proprietary technology
+			called the App Engine datastore. 
+			It's a little different from a standard Relational Database, 
+			and is the biggest change from an otherwise "normal" Django app. 
+			It also comes with a great SDK 
+			that lets you deploy with the touch of a button. 
+		</p>
+		<p><strong><code>You don't need to have ever used GAE before to 
+			use this hackpack.</code></strong> Direct interaction with GAE
+			will probably be limited to installing the SDK, 
+			signing up, and hitting "deploy" for the most part. 
+		</p>
+		<p><a class="btn" href="http://code.google.com/appengine/whyappengine.html">Learn more from Google &raquo;</a></p>
 	</div>
 	<div class="span-one-third">
 		<h2>Python 2.7</h2>
-		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-		<p><a class="btn" href="#">View details &raquo;</a></p>
+		<h3>the something</h3>
+		<p>GAE only supported Python 2.5 until recently, 
+			and the upgrade offers some decent advantages. 
+			2.7 support is still limited -- bugs remain --
+			but the updated language is a plus along with 
+			the much-needed capability of Multithreading. 
+		</p>
+		<p><strong><code>Familiarity with Python is a must if you plan 
+			on using this hackpack.</code></strong> You don't have to be 
+			a dedicated Pythonista by any means -- after all, 
+			it's a very easy language to pick up -- but 
+			I'll be assuming you know Python throughout this tutorial. 
+		</p>
+		<p><a class="btn" href="http://python.org/">Learn (about) Python &raquo;</a></p>
 	</div>
 	<div class="span-one-third">
 		<h2>Django</h2>
-		<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-		<p><a class="btn" href="#">View details &raquo;</a></p>
+		<h3>the skeleton</h3>
+		<p>The most popular web framework for Python,
+			Django is a pretty full-featured framework
+			for dynamic websites. It's very well suppported
+			and has a strong community of developers who 
+			regularly put out add-ons and the like. 
+			Most standard questions about Django, and a great many non-standard questions,
+			have already been well-answered on StackOverflow. 
+		</p>
+		<p><strong><code>Familiarity with Django is a major plus, 
+			but not strictly required, to use this hackpack.</code></strong>
+			If nobody in your group has ever used Django before, 
+			this may be very tough for you if you're building something 
+			particularly complicated. I'll do my best to help out 
+			through tutorials and explanations of the basics. 
+			For those with 8-16 hours to spend very wisely, 
+			I strongly recommend learning more at 
+			<a href="http://djangobook.com/en/2.0/">djangobook.com</a>. 
+		<p>
+		<p><a class="btn" href="https://www.djangoproject.com/">Learn (about) Django &raquo;</a></p>
 	</div>
 </div>
 
@@ -56,6 +100,7 @@
 <div class="row">
 	<div class="span-one-third">
 		  <h2>Twitter Bootstrap</h2>
+		  <h3>the skin</h3>
 		  <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 		  <p><a class="btn" href="#">View details &raquo;</a></p>
 	</div>
@@ -77,3 +122,6 @@
 	</div>
 </div>
 {% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}
