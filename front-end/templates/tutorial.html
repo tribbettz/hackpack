@@ -16,7 +16,28 @@
 <!-- Main hero unit for a primary marketing message or call to action -->
 <div class="hero-unit">
 	<h1>Get Started</h1>
-	<h2>This won't hurt a bit.</h2>
+	<h2><a href="#" class="popthis" rel="popover" title="A note:" data-placement="below"
+    data-content="
+      <p>
+        This tutorial is written with the assumption that
+        the reader may be a complete beginner in any given technology. 
+      </p>
+      <hr>
+      <p>
+        For example, when I did my first hackathon, 
+        I didn't know what Git was or how to do anything
+        in the command line. Other people might not have 
+        ever touched django before, but be great with javascript. 
+      </p>
+      <hr>
+      <p>
+        So if it seems like I'm babying you, keep in mind:
+        I know you're good/smart/experienced with 
+        <em>something</em>, but not necessarily <em>everything</em>. 
+      </p>
+    ">
+    This won't hurt a bit.</a>
+  </h2>
 	<hr>
 	<ol>
     <h2>
@@ -57,22 +78,57 @@
       </li>
       <hr>
       <li>
+        Get Git (if not installed)
+        <p>
+          I'm serious. You need to do this. 
+        </p>
+        <p>
+          Download and install Git <a href="http://git-scm.com/download">here</a>.
+        </p>
+        <p>
+          Set up an account with either 
+          <a href="https://github.com/signup/free">GitHub</a> 
+          or <a href="https://bitbucket.org/account/signup/">BitBucket</a>. 
+          GitHub's been "rocking git" for longer, 
+          but BitBucket offers free unlimited *private* repositories, 
+          with unlimited collaborators, if you have a .edu email address
+          (aka if you go to college). 
+        </p>
+      </li>
+      <hr>
+      <li>
         Download this thing. 
         <p>
-          You can get the full thing 
-          (with docs: basically what you're looking at)
+          Go <a href="https://bitbucket.org/rattray/hackpack-nodocs">here</a>
+          and click "fork" in the upper right to fork the repository. 
+          This will be your application, so give it the name you want, etc. 
+          Now might also be a good time to add your teammates as collaborators, 
+          but that could also be done later. 
+        </p>
+        <p>
+          Once you're ready to move on, 
+          open command prompt (or bash or whatever)
+          and cd (change directory, for the unititated)
+          to the <em>parent</em> directory of where you'd like to keep this. 
+          For example, I have a 'djcode' folder where I keep all my code; 
+          I would type <code>cd c:/djcode </code>. 
+        </p>
+        <p>
+          Clone the repository you forked (aka, the one you just 'made')
+          from bitbucket or git. This should be something like
+          <code>git clone https://bitbucket.org/username/appname.git</code>. 
+          You'll see the url towards the top of the repository page. 
+        </p>
+        <p>
+          You can get the full thing with docs (basically what you're looking at)
           <a href="https://bitbucket.org/rattray/hackpack">here</a> 
           ('get source' or 'fork' in the upper right),
           but you should use
           it more for reference than as a template. 
-          I would recommend taking a look at it, though, 
+          Especially if you're a beginner, 
+          I would recommend taking a look at it anyway 
           as it was built expressly with reuse and 'teaching' 
           in mind. We'll get to this later. 
-        </p>
-        <p>
-          Get the bare-bones content-free 
-          version <a href="">here</a>. 
-          This is what you should really be building from. 
         </p>
       </li>
       <hr>
@@ -83,3 +139,10 @@
   </ol>
 </div>
 {% endblock content %}
+
+{% block scripts %}
+<script>
+  var poptions = {'html':true};
+  $('.popthis').popover(poptions);
+</script>
+{% endblock %}

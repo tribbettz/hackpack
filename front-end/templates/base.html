@@ -74,7 +74,7 @@
           A project by 
           {% for author in founders %}
             <a href="{% if author.url %}{{ author.url }}{% else %}mailto:{{ author.email }}{% endif %}" 
-              rel="twipsy" data-placement="above" title="{{ author.name }}"
+              rel="popover" data-placement="above" title="{{ author.name }}"
               data-content="
                 <img src='{{ author.picture }}' style='max-width:100%;'>
                 <p>{{ author.blurb }}</p>
