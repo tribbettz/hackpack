@@ -10,20 +10,7 @@ urlpatterns = patterns('',
     #important general shit
     (r'^admin/', include(admin.site.urls)),
     (r'media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-    (r'image_handler/(.+)/(.+)/(.+)$', image_handler),
 
     #standard pages    
     (r'^$', index),    
-    (r'^about/$', about),
-    (r'^resources/$', resources),
-    (r'^tutorial/$', tutorial),
-    (r'^guestbook/$', guestbook),
-                       
-    #guestbook stuff
-    (r'^signin/$', signin),
-    (r'^signup/$', signup),
-    (r'^loggedin/$', loggedin),
-    (r'^logout/$', logout),
-    (r'^upload/$', upload_files),
-    (r'^img_uploader/$', myFileHandler)
     )

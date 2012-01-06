@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>{% block title %}HackPack{% endblock %}</title>
+  <title>{% block title %}{{ proj_name }}{% endblock %}</title>
   <meta name="description" content="{{ proj_description }}">
 	<meta name="author" content="{% for author in founders %}{{ author.name }},{% endfor %}">
 

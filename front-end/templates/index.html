@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ block.super }} | Home {% endblock %}
+{% block title %}{{ block.super }} | {{ thispage }} {% endblock %}
 
 {% block nav %}
 	{% for p in pages %}
@@ -17,110 +17,8 @@
 <div class="hero-unit">
 	<h1>{{ proj_name }}</h1>
 	<h2>{{ proj_description }}</h2>
-	<h2></h2>
-	<p>Use it to hack something out quickly without worrying about the standard drudgery of:
-		<ul>
-			<li>Setting up server stuff (other than a GAE account--two flicks of a whistle'll get you there). </li>
-			<li>Setting up all the basic Django configurations, including compatibility with GAE. </li>
-			<li>Ensuring everything's good to go with Python 2.7, a new feature (still experimental) on GAE. </li>
-			<li>Proper <code>&lt;!doctype&gt;</code>, <code>&lt;meta&gt;</code>, and all that stuff. </li>
-			<li>Consistent cross-browser styling and HTML5 pseudo-support for older browsers. </li>
-			<li>A basic level of decent styles, pretty buttons, and some JS goodies from Bootstrap. </li>
-		</ul>
-	</p>
-	<p><a class="btn primary large" href="#about">Learn more &raquo;</a></p>
 </div>
 
-<!-- Example row of columns -->
-<div class="row" id="about">
-	<div class="span-one-third">
-		<h2>Google App Engine</h2>
-		<h3>the muscle</h3>
-		<p>GAE is a great choice for a quick hack. 
-			Powered by Google's infrastructure, 
-			it takes care of all hosting aspects, 
-			including the database: a proprietary technology
-			called the App Engine datastore. 
-			It's a little different from a standard Relational Database, 
-			and is the biggest change from an otherwise "normal" Django app. 
-			It also comes with a great SDK 
-			that lets you deploy with the touch of a button. 
-		</p>
-		<p><strong><code>You don't need to have ever used GAE before to 
-			use this hackpack.</code></strong> Direct interaction with GAE
-			will probably be limited to installing the SDK, 
-			signing up, and hitting "deploy" for the most part. 
-		</p>
-		<p><a class="btn" href="http://code.google.com/appengine/whyappengine.html">Learn more from Google &raquo;</a></p>
-	</div>
-	<div class="span-one-third">
-		<h2>Python 2.7</h2>
-		<h3>the something</h3>
-		<p>GAE only supported Python 2.5 until recently, 
-			and the upgrade offers some decent advantages. 
-			2.7 support is still limited -- bugs remain --
-			but the updated language is a plus along with 
-			the much-needed capability of Multithreading. 
-		</p>
-		<p><strong><code>Familiarity with Python is a must if you plan 
-			on using this hackpack.</code></strong> You don't have to be 
-			a dedicated Pythonista by any means -- after all, 
-			it's a very easy language to pick up -- but 
-			I'll be assuming you know Python throughout this tutorial. 
-		</p>
-		<p><a class="btn" href="http://python.org/">Learn (about) Python &raquo;</a></p>
-	</div>
-	<div class="span-one-third">
-		<h2>Django</h2>
-		<h3>the skeleton</h3>
-		<p>The most popular web framework for Python,
-			Django is a pretty full-featured framework
-			for dynamic websites. It's very well suppported
-			and has a strong community of developers who 
-			regularly put out add-ons and the like. 
-			Most standard questions about Django, and a great many non-standard questions,
-			have already been well-answered on StackOverflow. 
-		</p>
-		<p><strong><code>Familiarity with Django is a major plus, 
-			but not strictly required, to use this hackpack.</code></strong>
-			If nobody in your group has ever used Django before, 
-			this may be very tough for you if you're building something 
-			particularly complicated. I'll do my best to help out 
-			through tutorials and explanations of the basics. 
-			For those with 8-16 hours to spend very wisely, 
-			I strongly recommend learning more at 
-			<a href="http://djangobook.com/en/2.0/">djangobook.com</a>. 
-		<p>
-		<p><a class="btn" href="https://www.djangoproject.com/">Learn (about) Django &raquo;</a></p>
-	</div>
-</div>
-
-<br>
-
-<div class="row">
-	<div class="span-one-third">
-		  <h2>Twitter Bootstrap</h2>
-		  <h3>the skin</h3>
-		  <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-		  <p><a class="btn" href="#">View details &raquo;</a></p>
-	</div>
-	<div class="span-one-third">
-		<h2>HTML5 Boilerplate</h2>
-		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-		<p><a class="btn" href="#">View details &raquo;</a></p>
-	</div>
-	<div class="span-one-third">
-		<h2>Other prebuilt stuff</h2>
-		<p>We haven't been hacking too long, but there have already been some things we'd rather not have to do twice, so we included them too. Some of them include:</p>
-		<ul>
-			<li>Multi-file upload (a major pain)</li>
-			<li>Dynamic image serving (necessary for GAE's datastore)</li>
-			<li>Even static image serving, which normally takes some setup</li>
-			<li>Some sample background patterns, if you're into that, along with a favicon file or two</li>
-		</ul>
-		<p><a class="btn" href="#">View details &raquo;</a></p>
-	</div>
-</div>
 {% endblock content %}
 
 {% block scripts %}
